@@ -11,17 +11,17 @@ class LinkHeader extends RefreshIndicator {
   /// the key that widget outside viewport indicator
   final Key linkKey;
 
-  const LinkHeader(
-      {Key? key,
-      required this.linkKey,
-      double height: 0.0,
-      RefreshStyle? refreshStyle,
-      Duration completeDuration: const Duration(milliseconds: 200)})
-      : super(
-            height: height,
-            refreshStyle: refreshStyle,
-            completeDuration: completeDuration,
-            key: key);
+  const LinkHeader({
+    super.key,
+    required this.linkKey,
+    double height = 0.0,
+    RefreshStyle? refreshStyle,
+    Duration completeDuration = const Duration(milliseconds: 200)
+  }) : super(
+    height: height,
+    refreshStyle: refreshStyle,
+    completeDuration: completeDuration,
+  );
 
   @override
   State<StatefulWidget> createState() {
@@ -78,12 +78,15 @@ class LinkFooter extends LoadIndicator {
   /// the key that widget outside viewport indicator
   final Key linkKey;
 
-  const LinkFooter(
-      {Key? key,
-      required this.linkKey,
-      double height: 0.0,
-      LoadStyle loadStyle: LoadStyle.ShowAlways})
-      : super(height: height, loadStyle: loadStyle, key: key);
+  const LinkFooter({
+    super.key,
+    required this.linkKey,
+    double height = 0.0,
+    LoadStyle loadStyle = LoadStyle.ShowAlways
+  }) : super(
+    height: height,
+    loadStyle: loadStyle
+  );
 
   @override
   State<StatefulWidget> createState() {
